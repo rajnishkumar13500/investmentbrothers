@@ -120,72 +120,48 @@ textarea {
 
 </p>
 	  <br>
-	  <div id="hcaptcha">
-	
-  <form onsubmit="validateCaptcha()">
-  
-   <h4>Send Email</h4>
+ <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="from_email@example.com"
+          action="https://script.google.com/macros/s/AKfycbwM8uwUuGRAnzi7iU6k554gIKjvtKPsfEvsz881wXV8LQ6VMz_1/exec">
 
 
 
-  <input id="email" placeholder="email" value="prince7988174620@gmail.com"></input><br>
-  <input id="subject" placeholder="Subject"></input><br><br>
-  <textarea id="message" placeholder="Message"></textarea><br>
-    
-    <br><p>Fill this Captcha :</p>
-    <div id="captcha">
+
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="What your Mom calls you" />
+
+        <br>
+
+
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+                  placeholder="Tell us what's on your mind..."></textarea>
+
+        <br>
+
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+               required placeholder="your.name@email.com" />
+
+
+
+        <button class="button-success pure-button button-xlarge">
+            <i class="fa fa-paper-plane"></i>&nbsp;Send
+        </button>
+
+    </form>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div style="display:none;" id="thankyou_message">
+        <h2>
+            <em>Thanks</em> for contacting us!
+            We will get back to you soon!
+        </h2>
     </div>
-    <input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
-    <button id="send" onclick="send()" type="submit">Submit</button>
-  </form>
-  </div>
- 
-  
-  <script>
-  var code;
-function createCaptcha() {
-  //clear the contents of captcha div first 
-  document.getElementById('captcha').innerHTML = "";
-  var charsArray =
-  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@";
-  var lengthOtp = 6;
-  var captcha = [];
-  for (var i = 0; i < lengthOtp; i++) {
-    //below code will not allow Repetition of Characters
-    var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
-    if (captcha.indexOf(charsArray[index]) == -1)
-      captcha.push(charsArray[index]);
-    else i--;
-  }
-  var canv = document.createElement("canvas");
-  canv.id = "captcha";
-  canv.width = 100;
-  canv.height = 50;
-  var ctx = canv.getContext("2d");
-  ctx.font = "20px Verdana";
-  //ctx.strokeText(captcha.join(""), 0, 30);
-  ctx.fillText(captcha.join(""), 0, 30);
-  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
-  code = captcha.join("");
-  document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
-}
-function validateCaptcha() {
-  event.preventDefault();
-  debugger
-  if (document.getElementById("cpatchaTextBox").value == code) {
-    function send() {
-  setTimeout(function() {
-    window.open("mailto:" + document.getElementById('email').value + "?subject=" + document.getElementById('subject').value + "&body=" + document.getElementById('message').value);
-  }, 320);
-}
-  }else{
-    alert("Invalid Captcha. try Again");
-    createCaptcha();
-  }
-}
 
-  </script>
-
+	 
+	  
+	  
+	
 <p>
 
 
@@ -202,8 +178,10 @@ function validateCaptcha() {
       </div>
   </footer>  
 	
+ <script data-cfasync="false" type="text/javascript"
+            src="selfmail.js"></script>
 
-<script src="particles.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

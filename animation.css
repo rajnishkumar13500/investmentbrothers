@@ -1,0 +1,40 @@
+.effect-3:hover {
+    -webkit-animation: effect-3 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: effect-3 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes effect-3 {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        text-shadow: none;
+    }
+
+    100% {
+        -webkit-transform: translateX(50px);
+        transform: translateX(50px);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        
+    }
+}
+
+@keyframes effect-3 {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        text-shadow: none;
+    }
+
+    100% {
+        -webkit-transform: translateX(50px);
+        transform: translateX(50px);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        
+    }
+}
