@@ -26,9 +26,7 @@
 
  
     <style>
-           #Idphoto{
-		   border-radius:50%;
-		  } 
+          
 		  input[type=text] {
     padding: 12px 20px;
     display: inline-block;
@@ -145,7 +143,7 @@ var downloadTimer = setInterval(function(){
   timeleft -= 1;
   
   }
-}, 1000);
+}, 1500);
 </script>
   
   
@@ -181,7 +179,7 @@ function validateCaptcha() {
   event.preventDefault();
   debugger
   if (document.getElementById("cpatchaTextBox").value == code) {
-    window.location.href = "../Page 2.html";
+    window.location.href = "page 2.html";
   }else{
     alert("Invalid Captcha. try Again");
     createCaptcha();

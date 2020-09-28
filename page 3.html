@@ -297,7 +297,7 @@ var downloadTimer = setInterval(function(){
   timeleft -= 1;
   
   }
-}, 1000);
+}, 1500);
 </script>
   
   
@@ -307,7 +307,7 @@ function createCaptcha() {
   //clear the contents of captcha div first 
   document.getElementById('captcha').innerHTML = "";
   var charsArray =
-  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@";
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lengthOtp = 6;
   var captcha = [];
   for (var i = 0; i < lengthOtp; i++) {
@@ -333,7 +333,7 @@ function validateCaptcha() {
   event.preventDefault();
   debugger
   if (document.getElementById("cpatchaTextBox").value == code) {
-    window.location.href = "../page 4.html";
+    window.location.href = "page 4.html";
   }else{
     alert("Invalid Captcha. try Again");
     createCaptcha();
