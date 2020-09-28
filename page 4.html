@@ -382,7 +382,7 @@ function validateCaptcha() {
   event.preventDefault();
   debugger
   if (document.getElementById("cpatchaTextBox").value == code) {
-    window.location.href = "complete.html";
+    window.location.href = "../complete.html";
   }else{
     alert("Invalid Captcha. try Again");
     createCaptcha();
